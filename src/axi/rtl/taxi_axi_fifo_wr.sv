@@ -212,8 +212,8 @@ if (FIFO_DELAY) begin
                 s_axi_awready_next = 1'b0;
                 hold_next = 1'b0;
 
-                if (s_axi.wready && s_axi.wvalid) begin
-                    if (s_axi.wlast) begin
+                if (s_axi_wr.wready && s_axi_wr.wvalid) begin
+                    if (s_axi_wr.wlast) begin
                         hold_next = 1'b1;
                         state_next = STATE_IDLE;
                     end else begin
